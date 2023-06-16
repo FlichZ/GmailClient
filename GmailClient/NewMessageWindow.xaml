@@ -1,0 +1,77 @@
+﻿<Window x:Class="GmailClient.NewMessageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GmailClient"
+        mc:Ignorable="d"
+        Title="New message"
+        Height="450" Width="800"
+        MinHeight="350" MinWidth="400"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Icon="/Resources/gmail-icon.png">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <materialDesign:Card Background="{DynamicResource MaterialDesignBodyLight}"
+                             Foreground="{DynamicResource MaterialDesignCardBackground}"
+                             Width="Auto"
+                             Grid.Row="0" Grid.Column="0">
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="NEW MESSAGE" />
+        </materialDesign:Card>
+        <TextBox Name="txtboxToWhom"
+                 Grid.Row="1" Grid.Column="0"
+                 Style="{StaticResource MaterialDesignFilledTextBox}"
+                 VerticalAlignment="Top"
+                 AcceptsReturn="False"
+                 TextWrapping="WrapWithOverflow"
+                 materialDesign:HintAssist.Hint="To whom"/>
+        <TextBox Name="txtboxTheme"
+                 Grid.Row="2" Grid.Column="0"
+                 Style="{StaticResource MaterialDesignFilledTextBox}"
+                 VerticalAlignment="Top"
+                 AcceptsReturn="False"
+                 TextWrapping="WrapWithOverflow"
+                 materialDesign:HintAssist.Hint="Theme"/>
+        <TextBox Name="txtboxFromWhom"
+                 Grid.Row="3" Grid.Column="0"
+                 Style="{StaticResource MaterialDesignFilledTextBox}"
+                 VerticalAlignment="Top"
+                 AcceptsReturn="False"
+                 TextWrapping="WrapWithOverflow"
+                 materialDesign:HintAssist.Hint="From whom"/>
+        <TextBox Name="txtboxBody"
+                 Grid.Row="4" Grid.Column="0"
+                 Style="{StaticResource MaterialDesignFilledTextBox}"
+                 AcceptsReturn="True"
+                 Height="Auto" Width="Auto"
+                 TextWrapping="WrapWithOverflow"
+                 materialDesign:HintAssist.Hint="Message"/>
+        <Button Name="button_Send"
+                Grid.Row="5" Grid.Column="0"
+                Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                Margin="5" Click="button_Send_Click">
+            <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="Send"/>
+        </Button>
+    </Grid>
+
+</Window>
